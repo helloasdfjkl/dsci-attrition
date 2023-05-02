@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>DSCI 304 Final Project: Key Factors of Employee Attrition</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<style>
+	/* Position the image container (needed to position the left and right arrows) */
+	.slide_container {
+		position: relative;
+		width: 50vw;
+		left: 10vw;
+		height: auto;
+		display: flex;
+		overflow-x: scroll;
+	}
+
+	/* Hide the images by default */
+	/* .mySlides {
+		display: none;
+	} */
+
+	/* Add a pointer when hovering over the thumbnail images */
+	.cursor {
+		cursor: pointer;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 40%;
+		width: auto;
+		padding: 16px;
+		margin-top: -50px;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		-webkit-user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	/* Container for image text */
+	.caption-container {
+		text-align: center;
+		background-color: #222;
+		padding: 2px 16px;
+		color: white;
+	}
+
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	/* Six columns side by side */
+	.column {
+		float: left;
+		width: 16.66%;
+	}
+
+	/* Add a transparency effect for thumnbail images */
+	.demo {
+		opacity: 0.6;
+	}
+
+	.active,
+	.demo:hover {
+		opacity: 1;
+	}
+</style>
+
+<body>
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">employee attrition</a> <span style="float: right">DSCI 304 Final Project Spring
+					2023</span></h1>
+
+		</header>
+
+		<!-- Menu -->
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<div class="logo"><i class="icon fa-smile"></i></div>
+				<h2>what keeps employees happy in the workforce?</h2>
+				<h3>exploring key factors of employee attrition</h3>
+				<h3>DSCI 304 Final Project Spring 2023</h3>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+
+			<!-- One -->
+			<section id="one" class="wrapper spotlight style6">
+				<div class="inner">
+					<a class="image"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="content">
+						<h2 class="major">firstly! what is employee attrition?</h2>
+						<p>employees leaving their organizations for unpredictable or uncontrollable reasons (from the
+							perspective of HR)
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper alt spotlight style2">
+				<div style="padding: 0 100px">
+					<h2 class="major">about this project</h2>
+					<h3>why this dataset is important</h3>
+					<p>The dataset I used for this project is called “Employee Attrition and Factors,” which I found
+						on Kaggle. Thinking about how I will be entering the industry workforce when I graduate (in
+						almost exactly one year now!), this dataset is relevant to my future as well as anyone else
+						who has the same goal, and my hope is that analyzing this data will reveal patterns to
+						reasons why people unexpectedly leave their jobs.
+					</p>
+				</div>
+				<div class="inner">
+					<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+					<div class="content">
+
+						<h3>pre-analysis predictions!</h3>
+						<p>Out of the variables offered in the dataset, some I find notable are distance from home,
+							number of years in this role, and salary.
+						</p>
+						<ul>
+							<li><b>distance from home</b>: as COVID shifted peoples’ perspectives on how important being
+								in the
+								office is, I suspect that many people wouldn’t be too happy with living too far from
+								their workplace</li>
+							<li><b>number of years in this role</b>: I haven’t looked too deeply into the job roles and
+								job
+								levels offered, but I would expect that those who are in a role for a long time without
+								promotion might get bored/search for other opportunities. But, maybe they just really
+								like that role?
+							</li>
+							<li><b>salary</b>: I’ve personally witnessed my parents job hunting throughout the years,
+								and it’s
+								always been with a primary motivation of earning more money. Naturally, jobs are meant
+								to make money, and not being content with salary can lead people to search elsewhere.
+							</li>
+						</ul>
+						<p>These results can help me decide what some significant variables are when considering if a
+							company retains a lot of employees...</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper spotlight style3">
+				<div class="inner">
+					<div class="content">
+						<h2 class="major">peeking at our data</h2>
+						<p>Firstly, I wanted to see what kind of dataset I would be working with. Below are some graphs
+							(pie chart and histograms)
+							to visualize the distribution of data points in our dataset. I separated people by 1.
+							whether they left the company or
+							not (attrition/left = yes, no attrition/stayed = no), age, education level, job department,
+							job level, and years at their
+							company.
+						</p>
+						<div class="slide_container">
+							<img src="images/agehist.png" style="width:100%">
+							<img src="images/educhist.png" style="width:100%">
+							<img src="images/depthist.png" style="width:100%">
+							<img src="images/joblevelhist.png" style="width:100%">
+							<img src="images/yearshist.png" style="width:100%">
+							<img src="images/piechart.png" style="width:100%">
+						</div>
+						<br /><br />
+						<div>scroll right!!</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="four" style="margin-left: 75px; margin-right: 200px;">
+				<div class="inner">
+					<div class="content">
+						<h2 class="major">are there any correlations between variables?</h2>
+						<image width="500px" src="images/corr.png" />
+						<p>
+							Some of the variables that have a correlation to each other are 
+							age, department, job level, job role, marital status, numcompaniesworked, performance
+							rating, total working years, years at company, years in current role, years since last
+							promotion, years with current manager.
+							<br /><br />
+							The variables that involve years having correlation makes sense bc years naturally increase, so all the years would be correlated to each other.
+							Another point that I noticed was that it looks like gender doesn't matter too much, which is contrary to what I thought... I wanted to see if gender
+							had any part in the reason why employees left. Maybe there just weren't enough data points?
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="five" class="wrapper spotlight style4">
+				<div class="inner">
+					<div class="content">
+						<h2 class="major">does years worked = loyalty?</h2>
+						<p style="float: left">I separated female and male and analyzed the effect of the number of years one was in their current role, seeing if gender had any effect on income. 
+							I also separated this by whether or not the employee eventually left the company. The results were actually contrary to what I thought, that employees who left would 
+						have a lower income. Rather, Attrition=1 (employees stayed), had a lower monthly income. However, this might also be attributed to the fact that the x axis is the number 
+					of years that an employee spent in a specific role. This doesn't include job promotions, or any role shifts.</p>
+						<img src="images/gif.gif" />
+						
+						<div style="display: flex">
+							<img width="300px" src="images/cplot1.png" />
+							<img width="300px" src="images/cplot2.png" />
+						</div>
+						<div style="display: flex">
+							<img width="300px" src="images/cplot3.png" />
+							<img width="300px" src="images/cplot4.png" />
+						</div>
+						<p style="float: right">Next, let's look at some substantive effects plots to closer analyze which variables have an effect on whether or not employees left the company or not.
+						Most of these results make sense. For example, those in a higher job level tended to leave the company less. Employees who were farther away from the office tended to leave the 
+					company more than those who had a closer job. etc, etc.</p>
+						
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Four -->
+			<section id="six" class="wrapper alt style1">
+				<div class="inner">
+					<p>Finally, interact with this graph! It's been split up into job level so you can clearly see employees' job satisfaction. Light blue dots represent employees who left, and dark blue
+						dots represent employees who stayed. This line graph/scatterplot compares an employee's years spent total at a company with their overall job satisfaction. From the results, it looks like 
+						there wasn't really a linear trend, and all job levels had around the same job satisfaction. The only difference was that there were less data points in the lower job levels.
+					</p>
+					<div style="width:100%; padding-bottom:56.25%; position:relative;">
+
+						<iframe src="images/interactive.html" style="position:absolute; top:0px; left:0px; 
+				width:100%; height:100%; border: none; overflow: hidden;">
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<section id="seven" class="wrapper alt style2">
+				<div class="inner">
+					<h2 class="major">Conclusion</h2>
+					<img src="images/cplot1.png" />
+					<img src="images/cplot2.png" />
+					<img src="images/cplot3.png" />
+					<img src="images/cplot4.png" />
+				</div>
+			</section>
+
+		</section>
+	</div>
+
+</body>
+<!-- Scripts -->
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
